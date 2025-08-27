@@ -2,6 +2,7 @@ import datetime
 from io import BytesIO
 from app.models import Alumno
 from app.repositories import AlumnoRepository
+from app.services import FichaAlumnoService
 
 class AlumnoService:
 
@@ -91,3 +92,14 @@ class AlumnoService:
             "universidad": universidad,
             "fecha": AlumnoService.__obtener_fecha_actual()
         }
+    
+    @staticmethod
+    def generar_ficha_alumno(self, id: int, formato: str):
+        alumno = self.alumno_repository.get_by_id(id)
+        if not alumno:
+            return None
+        if formato == "json":
+            return FichaAlumnoService.generar_ficha_json(alumno)
+        elif formato == "pdf":
+            return FichaAlumnoService.generar_ficha_pdf(alumno)
+        return None

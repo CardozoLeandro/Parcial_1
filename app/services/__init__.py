@@ -16,3 +16,4 @@ from .cargo_service import CargoService
 from .categoriacargo_service import CategoriaCargoService
 from .tipo_dedicacion_service import TipoDedicacionService
 from .user_service import UsuarioService
+from .ficha_alumno_service import FichaAlumnoService
