@@ -16,3 +16,4 @@ from .cargo_repositorio import CargoRepository
 from .categoriacargo_repositorio import CategoriaCargoRepository
 from .tipo_dedicacion_repositorio import TipoDedicacionRepository
 from .user_repositorio import UsuarioRepository
+from .metodo_CRUD import MetodoCRUD
